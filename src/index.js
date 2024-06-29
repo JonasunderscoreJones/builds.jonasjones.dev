@@ -2,21 +2,20 @@ addEventListener('fetch', (event) => {
 	event.respondWith(handleRequest(event.request));
 });
 
-const displayNames = {
-	'jonasjones': 'Homepage (jonasjones.dev)',
-	'wiki-jonasjones-dev': 'Jonas_Jones Wiki (wiki.jonasjones.dev)',
-	'j-onasjones-github-io': 'Old Homepage (j.onasjones.github.io)',
-	'lastlovedsyncify': 'lastlovedsyncify (previews only)',
-	'kcomebacks': 'K-Pop Comebacks (kcomebacks.jonasjones.dev)',
-	'sveltemarkdownwiki': 'Svelte Markdown Wiki TEMPLATE (sveltemarkdownwiki.jonasjones.dev)',
-	'blog-jonasjones-dev': 'Blog (blog.jonasjones.dev)',
-	'jonasjones-docs': 'Jonas_Jones Docs (docs.jonasjones.dev)',
-	'jonasjonesstudios-com': 'Jonas_Jones Studios (jonasjonesstudios.com)',
-};
-
 
 
 function getDisplayName(namespace) {
+	const displayNames = {
+		'jonasjones': 'Homepage (jonasjones.dev)',
+		'wiki-jonasjones-dev': 'Jonas_Jones Wiki (wiki.jonasjones.dev)',
+		'j-onasjones-github-io': 'Old Homepage (j.onasjones.github.io)',
+		'lastlovedsyncify': 'lastlovedsyncify (previews only)',
+		'kcomebacks': 'K-Pop Comebacks (kcomebacks.jonasjones.dev)',
+		'sveltemarkdownwiki': 'Svelte Markdown Wiki TEMPLATE (sveltemarkdownwiki.jonasjones.dev)',
+		'blog-jonasjones-dev': 'Blog (blog.jonasjones.dev)',
+		'jonasjones-docs': 'Jonas_Jones Docs (docs.jonasjones.dev)',
+		'jonasjonesstudios-com': 'Jonas_Jones Studios (jonasjonesstudios.com)',
+	};
 	//check if the namespace is in the displayNames object. if not, return the namespace
 	return displayNames[namespace] || namespace;
 }
