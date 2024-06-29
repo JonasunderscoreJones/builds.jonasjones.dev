@@ -2,6 +2,18 @@ addEventListener('fetch', (event) => {
 	event.respondWith(handleRequest(event.request));
 });
 
+const displayNames = {
+	'jonasjones': 'Homepage (jonasjones.dev)',
+	'wiki-jonasjones-dev': 'Jonas_Jones Wiki (wiki.jonasjones.dev)',
+	'j-onasjones-github-io': 'Old Homepage (j.onasjones.github.io)',
+	'lastlovedsyncify': 'lastlovedsyncify (previews only)',
+	'kcomebacks': 'K-Pop Comebacks (kcomebacks.jonasjones.dev)',
+	'sveltemarkdownwiki': 'Svelte Markdown Wiki TEMPLATE (sveltemarkdownwiki.jonasjones.dev)',
+	'blog-jonasjones-dev': 'Blog (blog.jonasjones.dev)',
+	'jonasjones-docs': 'Jonas_Jones Docs (docs.jonasjones.dev)',
+	'jonasjonesstudios-com': 'Jonas_Jones Studios (jonasjonesstudios.com)',
+};
+
 
 
 function getDisplayName(namespace) {
@@ -144,6 +156,7 @@ async function buildsPageConstructor(namespace) {
 
 
 async function handleRequest(request) {
+	console.log(CLOUDFLARE_ACCOUNT_ID)
 	const { pathname } = new URL(request.url);
 	if (pathname === '/') {
 		return new Response(await rootPageConstructor(), {
@@ -153,7 +166,7 @@ async function handleRequest(request) {
 		});
 	}
 	const path = pathname.split('/');
-	// if the first path is in the getPagesfromData() array, then 
+	// if the first path is in the getPagesfromData() array, then
 	//return new Response(JSON.stringify(await getPages()));
 	if (path.length === 2) {
 		const pages = await getPagesNamesfromData(await getPages());
