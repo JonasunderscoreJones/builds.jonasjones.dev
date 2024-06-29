@@ -5,7 +5,7 @@ addEventListener('fetch', (event) => {
 const displayNames = {
 	'jonasjones': 'Homepage (jonasjones.dev)',
 	'wiki-jonasjones-dev': 'Jonas_Jones Wiki (wiki.jonasjones.dev)',
-	'j-onasjones-github-io': 'Old Homepage (j.onasjones.github.io)',
+	'j-onasjones-github-io': 'Old Homepage (old.jonasjones.dev)',
 	'lastlovedsyncify': 'lastlovedsyncify (previews only)',
 	'kcomebacks': 'K-Pop Comebacks (kcomebacks.jonasjones.dev)',
 	'sveltemarkdownwiki': 'Svelte Markdown Wiki TEMPLATE (sveltemarkdownwiki.jonasjones.dev)',
