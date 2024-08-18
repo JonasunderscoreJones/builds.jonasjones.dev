@@ -1,5 +1,5 @@
 addEventListener('fetch', (event) => {
-	event.respondWith(handleRequest(event.request));
+	event.respondWith(handleRequest(event));
 });
 
 const displayNames = {
@@ -13,6 +13,33 @@ const displayNames = {
 	'jonasjones-docs': 'Jonas_Jones Docs (docs.jonasjones.dev)',
 	'jonasjonesstudios-com': 'Jonas_Jones Studios (jonasjonesstudios.com)',
 };
+
+async function recordRequest(request) {
+
+  const analyticsData = {
+    timestamp: Date.now(),
+    domain: new URL(request.url).hostname,
+    method: request.method,
+    path: new URL(request.url).pathname,
+    ipcountry: request.cf.country,
+  }
+  const ANALYTICS_URL = 'https://analytics.jonasjones.dev/requests/record';
+
+  const response = await fetch(ANALYTICS_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': ANALYTICS_API_KEY,
+    },
+    body: JSON.stringify(analyticsData)
+  });
+
+  if (response.ok) {
+    console.log('Request recorded successfully');
+  } else {
+    console.error('Failed to record request:', response.status, await response.text());
+  }
+}
 
 
 
@@ -155,7 +182,9 @@ async function buildsPageConstructor(namespace) {
 }
 
 
-async function handleRequest(request) {
+async function handleRequest(event) {
+	const request = event.request;
+	event.waitUntil(recordRequest(request));
 	console.log(CLOUDFLARE_ACCOUNT_ID)
 	const { pathname } = new URL(request.url);
 	if (pathname === '/') {
