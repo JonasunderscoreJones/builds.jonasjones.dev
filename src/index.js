@@ -12,6 +12,8 @@ const displayNames = {
 	'blog-jonasjones-dev': 'Blog (blog.jonasjones.dev)',
 	'jonasjones-docs': 'Jonas_Jones Docs (docs.jonasjones.dev)',
 	'jonasjonesstudios-com': 'Jonas_Jones Studios (jonasjonesstudios.com)',
+	'codes-jonasjones-dev': 'Codes Generator (codes.jonasjones.dev)',
+	'stats-jonasjones-dev': 'Ecosystem Stats (stats.jonasjones.dev)',
 };
 
 async function recordRequest(request) {
