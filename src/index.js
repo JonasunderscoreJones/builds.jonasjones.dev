@@ -14,6 +14,7 @@ const displayNames = {
 	'jonasjonesstudios-com': 'Jonas_Jones Studios (jonasjonesstudios.com)',
 	'codes-jonasjones-dev': 'Codes Generator (codes.jonasjones.dev)',
 	'stats-jonasjones-dev': 'Ecosystem Stats (stats.jonasjones.dev)',
+	'docs-jonasjones-dev': 'Jonas_Jones Docs (docs.jonasjones.dev)',
 };
 
 async function recordRequest(request) {
