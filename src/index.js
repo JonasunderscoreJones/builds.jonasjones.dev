@@ -15,6 +15,11 @@ const displayNames = {
 	'codes-jonasjones-dev': 'Codes Generator (codes.jonasjones.dev)',
 	'stats-jonasjones-dev': 'Ecosystem Stats (stats.jonasjones.dev)',
 	'docs-jonasjones-dev': 'Jonas_Jones Docs (docs.jonasjones.dev)',
+	'dash-jonasjones-dev': 'Jonas_Jones Dashboard',
+	'hub-jonasjones-dev': 'Jonas_Jones Hub/Linktree',
+	'wrappedify-jonasjones-dev': 'Spotify Wrapped inspired Statistics Fetcher',
+	'bingogenerator': 'Svelte Bingogenerator and Player',
+	'epr-tut-loesungen-site': 'Tutorial Resources Site'
 };
 
 async function recordRequest(request) {
